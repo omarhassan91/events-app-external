@@ -1,0 +1,29 @@
+/* body {
+    position: relative;
+} */
+.creators {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.creator {
+    font-size: 2rem;
+    background-color: rgba(0,0,0,0);
+    position: relative;
+    padding: 1em;
+}
+
+.creator::after {
+    content: '';
+    z-index: -1;
+    width: 10em;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+    background-color: white;
+    border-radius: 0.25em;
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
+}
