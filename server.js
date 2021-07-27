@@ -112,6 +112,26 @@ app.post('/event',
 
 // create other get and post methods here - version, login,  etc
 
+// Delete an event
+app.delete('/event',
+    urlencodedParser,
+    (req, res) => {
+        request.delete(
+            {
+                url: SERVER + '/event', 
+                body: req.body,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                json: true
+            },
+            (error, response, body) => {
+                console.log('error:', error); // Print the error if one occurred
+                console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+                console.log(body); // print the return from the server microservice
+                res.redirect("/"); // redirect to the home page
+            });
+    });
 
 
 
