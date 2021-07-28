@@ -113,10 +113,18 @@ app.post('/event',
 
 // create other get and post methods here - version, login,  etc
 
+app.post('/postington', urlencodedParser, function (req, res) {
+    console.log("HELLOOOO");
+    res.send('DELETE request to homepage')
+})
+
 // Delete an event
-app.delete('/event',
+app.post('/delete_event',
     urlencodedParser,
     (req, res) => {
+        console.log("HI");
+        res.send('helloo ben');
+        /**
         request.delete(
             {
                 url: SERVER + '/event', 
@@ -132,6 +140,7 @@ app.delete('/event',
                 console.log(body); // print the return from the server microservice
                 res.redirect("/"); // redirect to the home page
             });
+        */
     });
 
 

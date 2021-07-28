@@ -3,9 +3,9 @@
     <li>
         <h2 class="event-title">{{ title }}</h2>
         <p class="event-desc">{{ description }}</p>
-        <form action="/event" method="delete">
+        <form action="/delete_event" method="post">
             <input type="text" name="idToDelete" value={{ id }} hidden />
-            <input type="submit" name="submit" value="submit" />
+            <input type="submit" name="submit" value="Delete" />
         </form>
     </li>
   {{/events}}
